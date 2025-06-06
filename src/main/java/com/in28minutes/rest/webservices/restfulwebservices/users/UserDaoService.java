@@ -1,5 +1,7 @@
 package com.in28minutes.rest.webservices.restfulwebservices.users;
 
+import com.in28minutes.rest.webservices.restfulwebservices.configuration.BasicPropertyConfiguration;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -15,6 +17,9 @@ public class UserDaoService {
     private static List<User> users = new ArrayList<>();
     private static int usersCount=0;
 
+    @Autowired
+    BasicPropertyConfiguration basicPropertyConfiguration;
+
     static {
         users.add(new User(usersCount++,"Hemant", LocalDate.now().minusYears(30)));
         users.add(new User(usersCount++,"Deepika", LocalDate.now().minusYears(28)));
@@ -23,6 +28,7 @@ public class UserDaoService {
     }
 
     public List<User> findAll(){
+        System.out.println("******** port number ****** :"+basicPropertyConfiguration.getPortNumber());
         return users;
     }
 

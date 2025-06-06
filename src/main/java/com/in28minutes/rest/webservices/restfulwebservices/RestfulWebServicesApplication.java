@@ -1,3 +1,4 @@
+/*
 package com.in28minutes.rest.webservices.restfulwebservices;
 
 import org.springframework.boot.SpringApplication;
@@ -11,3 +12,4 @@ public class RestfulWebServicesApplication {
 	}
 
 }
+*/
